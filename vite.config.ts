@@ -4,8 +4,12 @@ import path from 'path';
 
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, process.cwd(), '');
+    // 判断是否在 Vercel 环境
+    const isVercel = process.env.VERCEL === '1';
+    
     return {
-      base: '/gift-visionary/',
+      // 如果是 Vercel，用根路径；如果是 GitHub Pages，用 /gift-visionary/
+      base: isVercel ? '/' : '/gift-visionary/',
       server: {
         port: 3000,
         host: '0.0.0.0',
