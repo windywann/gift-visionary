@@ -1,0 +1,17 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/deepseek/:path*",
+      "destination": "https://api.deepseek.com/:path*"
+    },
+    {
+      "source": "/api/zhidemai/:path*",
+      "destination": "https://openapi.smzdm.com/:path*"
+    },
+    {
+      "source": "/api/imgsearch/:path*",
+      "destination": "https://cn.apihz.cn/:path*"
+    }
+  ]
+}
+
