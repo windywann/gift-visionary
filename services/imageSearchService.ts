@@ -184,7 +184,7 @@ export const searchImagesByKeyword = async (
         case '京东':
           // 使用京东搜索的基础URL，避免自动启用"仅显示有货"等筛选
           // 使用 w 参数而不是 keyword 参数，可以避免某些默认筛选条件
-          return `https://search.jd.com/Search?w=${encodedKeyword}`;
+          return `https://search.jd.com/Search?keyword=${encodedKeyword}`;
         case '天猫':
           return `https://list.tmall.com/search_product.htm?q=${encodedKeyword}`;
         case '淘宝':
