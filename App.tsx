@@ -4,6 +4,7 @@ import ProductCard from './components/ProductCard';
 import LoadingOverlay from './components/LoadingOverlay';
 import FavoritesList from './components/FavoritesList';
 import Button from './components/Button';
+import Logo from './components/Logo';
 import { GiftRequest, Product, LoadingStage, RecipientProfile } from './types';
 import { generateGiftKeywords } from './services/deepseekService';
 import { searchProductsByKeywords } from './services/searchService';
@@ -161,15 +162,18 @@ const App: React.FC = () => {
       {/* Header */}
       <header className="sticky top-0 z-40 bg-macaron-bg/90 backdrop-blur-md border-b border-macaron-pink/10 px-6 py-4 flex justify-between items-center shadow-sm">
         <div 
-          className="flex flex-col cursor-pointer" 
+          className="flex items-center cursor-pointer gap-3" 
           onClick={() => { setView('HOME'); setLoadingStage(LoadingStage.IDLE); }}
         >
-          <h1 className="text-2xl font-display font-bold text-macaron-pinkDark tracking-wide">
-            礼想家
-          </h1>
-          <p className="text-[10px] text-macaron-textSub font-medium tracking-widest uppercase">
-            Gift Visionary
-          </p>
+          <Logo className="w-10 h-10" />
+          <div className="flex flex-col">
+            <h1 className="text-2xl font-display font-bold text-macaron-pinkDark tracking-wide leading-none">
+              礼想家
+            </h1>
+            <p className="text-[10px] text-macaron-textSub font-medium tracking-widest uppercase">
+              Gift Visionary
+            </p>
+          </div>
         </div>
         
         <button 
